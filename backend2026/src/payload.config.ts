@@ -37,13 +37,6 @@ export default buildConfig({
     },
   }),
 
-  // *** SEZIONE AGGIUNTA PER RENDER (IMPORTANTISSIMA) ***
-  express: {
-    port: process.env.PORT ? Number(process.env.PORT) : 3000,
-    host: '0.0.0.0', // obbligatorio per Render
-  },
-  // *** FINE AGGIUNTA ***
-
   sharp,
 
   plugins: [
