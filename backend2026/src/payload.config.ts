@@ -20,18 +20,32 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
+
   collections: [Users, Media],
+
   editor: lexicalEditor(),
+
   secret: process.env.PAYLOAD_SECRET || '',
+
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
+
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
     },
   }),
+
+  // *** SEZIONE AGGIUNTA PER RENDER (IMPORTANTISSIMA) ***
+  express: {
+    port: process.env.PORT ? Number(process.env.PORT) : 3000,
+    host: '0.0.0.0', // obbligatorio per Render
+  },
+  // *** FINE AGGIUNTA ***
+
   sharp,
+
   plugins: [
     payloadCloudPlugin(),
     // storage-adapter-placeholder
