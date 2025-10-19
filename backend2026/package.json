@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "next build",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=4096\" next build",
     "start": "next start",
     "dev": "next dev",
     "generate:importmap": "payload generate:importmap",
@@ -19,10 +19,22 @@
     "@payloadcms/ui": "3.60.0",
     "@payloadcms/db-postgres": "3.60.0",
     "dotenv": "16.4.7",
+    "graphql": "^16.8.1",
     "next": "15.4.4",
     "payload": "3.60.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "sharp": "0.34.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.54.1",
+    "@types/node": "^20.11.0",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "prettier": "^3.4.2",
+    "typescript": "5.7.3"
+  },
+  "engines": {
+    "node": ">=20.10.0 <21"
   }
 }
