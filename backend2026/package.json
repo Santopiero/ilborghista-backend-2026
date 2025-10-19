@@ -5,8 +5,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "NODE_OPTIONS=--max-old-space-size=4096 ./node_modules/.bin/next build",
-    "start": "./node_modules/.bin/next start",
+    "build": "next build",
+    "start": "next start",
     "dev": "next dev",
     "generate:importmap": "payload generate:importmap",
     "generate:types": "payload generate:types",
@@ -20,17 +20,17 @@
     "@payloadcms/db-postgres": "3.60.0",
     "dotenv": "16.4.7",
     "graphql": "^16.8.1",
-    "next": "15.4.4",
+    "next": "14.2.7",
     "payload": "3.60.0",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "sharp": "0.34.2"
   },
   "devDependencies": {
     "@playwright/test": "1.54.1",
     "@types/node": "^20.11.0",
-    "@types/react": "19.1.8",
-    "@types/react-dom": "19.1.6",
+    "@types/react": "18.2.47",
+    "@types/react-dom": "18.2.18",
     "prettier": "^3.4.2",
     "typescript": "5.7.3"
   },
