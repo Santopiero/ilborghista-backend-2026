@@ -5,8 +5,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "NODE_OPTIONS=--max-old-space-size=4096 next build",
-    "start": "next start",
+    "build": "NODE_OPTIONS=--max-old-space-size=4096 ./node_modules/.bin/next build",
+    "start": "./node_modules/.bin/next start",
     "dev": "next dev",
     "generate:importmap": "payload generate:importmap",
     "generate:types": "payload generate:types",
