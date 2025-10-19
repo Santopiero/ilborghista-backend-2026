@@ -33,7 +33,8 @@ export default buildConfig({
 
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI || '',
+      // ✅ STANDARD UNIVERSALE, COME DA TUA SCELTA
+      connectionString: process.env.DATABASE_URL || '',
     },
   }),
 
