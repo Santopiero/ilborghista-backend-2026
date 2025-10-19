@@ -1,4 +1,3 @@
-// storage-adapter-import-placeholder
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
@@ -33,7 +32,6 @@ export default buildConfig({
 
   db: postgresAdapter({
     pool: {
-      // ✅ STANDARD UNIVERSALE, COME DA TUA SCELTA
       connectionString: process.env.DATABASE_URL || '',
     },
   }),
@@ -42,6 +40,5 @@ export default buildConfig({
 
   plugins: [
     payloadCloudPlugin(),
-    // storage-adapter-placeholder
   ],
 })
