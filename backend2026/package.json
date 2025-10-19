@@ -5,12 +5,12 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "NODE_OPTIONS=--max-old-space-size=4096 ./node_modules/.bin/next build",
-    "start": "./node_modules/.bin/next start",
-    "dev": "next dev",
-    "generate:importmap": "payload generate:importmap",
-    "generate:types": "payload generate:types",
-    "payload": "payload"
+    "build": "cd backend2026 && NODE_OPTIONS=--max-old-space-size=4096 ./node_modules/.bin/next build",
+    "start": "cd backend2026 && ./node_modules/.bin/next start",
+    "dev": "cd backend2026 && next dev",
+    "generate:importmap": "cd backend2026 && payload generate:importmap",
+    "generate:types": "cd backend2026 && payload generate:types",
+    "payload": "cd backend2026 && payload"
   },
   "dependencies": {
     "@payloadcms/next": "3.60.0",
