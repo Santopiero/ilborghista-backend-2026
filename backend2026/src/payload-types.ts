@@ -69,6 +69,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    dormire: Dormire;
+    borghi: Borghi;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -77,6 +79,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    dormire: DormireSelect<false> | DormireSelect<true>;
+    borghi: BorghiSelect<false> | BorghiSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -158,6 +162,101 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "dormire".
+ */
+export interface Dormire {
+  id: number;
+  title: string;
+  /**
+   * Se vuoto, viene generato automaticamente dal nome
+   */
+  slug?: string | null;
+  borgo: number | Borghi;
+  /**
+   * Massimo 300 caratteri
+   */
+  descrizioneBreve?: string | null;
+  immagineCopertina?: (number | null) | Media;
+  immaginiGalleria?:
+    | {
+        immagine: number | Media;
+        did?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Elenco delle stanze con prezzi e dettagli
+   */
+  stanze?:
+    | {
+        nome: string;
+        /**
+         * Prezzo base/notte
+         */
+        prezzo?: number | null;
+        descrizione?: string | null;
+        immagini?:
+          | {
+              immagine: number | Media;
+              did?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "borghi".
+ */
+export interface Borghi {
+  id: number;
+  title: string;
+  /**
+   * Se vuoto, viene generato automaticamente dal nome
+   */
+  slug?: string | null;
+  regione:
+    | 'Abruzzo'
+    | 'Basilicata'
+    | 'Calabria'
+    | 'Campania'
+    | 'Emilia-Romagna'
+    | 'Friuli-Venezia Giulia'
+    | 'Lazio'
+    | 'Liguria'
+    | 'Lombardia'
+    | 'Marche'
+    | 'Molise'
+    | 'Piemonte'
+    | 'Puglia'
+    | 'Sardegna'
+    | 'Sicilia'
+    | 'Toscana'
+    | 'Trentino-Alto Adige'
+    | 'Umbria'
+    | "Valle d'Aosta"
+    | 'Veneto';
+  /**
+   * Massimo 300 caratteri
+   */
+  descrizioneBreve?: string | null;
+  immagineCopertina?: (number | null) | Media;
+  immaginiGalleria?:
+    | {
+        immagine: number | Media;
+        did?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -170,6 +269,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'dormire';
+        value: number | Dormire;
+      } | null)
+    | ({
+        relationTo: 'borghi';
+        value: number | Borghi;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -252,6 +359,61 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "dormire_select".
+ */
+export interface DormireSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  borgo?: T;
+  descrizioneBreve?: T;
+  immagineCopertina?: T;
+  immaginiGalleria?:
+    | T
+    | {
+        immagine?: T;
+        did?: T;
+        id?: T;
+      };
+  stanze?:
+    | T
+    | {
+        nome?: T;
+        prezzo?: T;
+        descrizione?: T;
+        immagini?:
+          | T
+          | {
+              immagine?: T;
+              did?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "borghi_select".
+ */
+export interface BorghiSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  regione?: T;
+  descrizioneBreve?: T;
+  immagineCopertina?: T;
+  immaginiGalleria?:
+    | T
+    | {
+        immagine?: T;
+        did?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

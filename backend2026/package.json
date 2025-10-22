@@ -5,20 +5,22 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "payload dev",
-    "build": "payload build",
-    "start": "payload start",
-    "generate:importmap": "payload generate:importmap",
-    "generate:types": "payload generate:types",
-    "lint": "eslint . --ext .js,.ts,.tsx",
-    "test": "echo \"No test configured yet\""
-  },
+  "dev": "payload dev",
+  "build": "payload build",
+  "start": "payload start",
+  "generate:importmap": "payload generate:importmap",
+  "generate:types": "payload generate:types",
+  "generate:db-schema": "payload generate:db-schema",
+  "test": "echo \"No test configured yet\""
+}
   "dependencies": {
     "@payloadcms/db-postgres": "^3.60.0",
+    "@payloadcms/next": "3.60.0",
     "@payloadcms/payload-cloud": "3.60.0",
     "@payloadcms/richtext-lexical": "3.60.0",
     "dotenv": "16.4.7",
     "graphql": "^16.8.1",
+    "next": "15.4.4",
     "payload": "3.60.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
