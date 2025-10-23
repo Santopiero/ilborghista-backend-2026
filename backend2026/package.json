@@ -5,14 +5,14 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-  "dev": "payload dev",
-  "build": "payload build",
-  "start": "payload start",
-  "generate:importmap": "payload generate:importmap",
-  "generate:types": "payload generate:types",
-  "generate:db-schema": "payload generate:db-schema",
-  "test": "echo \"No test configured yet\""
-}
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "generate:importmap": "payload generate:importmap",
+    "generate:types": "payload generate:types",
+    "generate:db-schema": "payload generate:db-schema",
+    "test": "echo \"No test configured yet\""
+  },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.60.0",
     "@payloadcms/next": "3.60.0",
