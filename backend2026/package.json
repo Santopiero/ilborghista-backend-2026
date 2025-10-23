@@ -5,14 +5,12 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "payload": "npx payload",
     "dev": "next dev",
-    "build": "yarn generate:importmap && yarn generate:types && yarn generate:db-schema && next build",
+    "build": "next build",
     "start": "next start",
-    "generate:importmap": "yarn payload generate:importmap",
-    "generate:types": "yarn payload generate:types",
-    "generate:db-schema": "yarn payload generate:db-schema",
-    "test": "echo \"No test configured yet\""
+    "generate:importmap": "payload generate:importmap",
+    "generate:types": "payload generate:types",
+    "generate:db-schema": "payload generate:db-schema"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.60.0",
