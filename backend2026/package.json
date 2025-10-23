@@ -5,6 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "payload": "payload",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
