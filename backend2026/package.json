@@ -7,11 +7,11 @@
   "scripts": {
     "payload": "payload",
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn generate:importmap && yarn generate:types && yarn generate:db-schema && next build",
     "start": "next start",
-    "generate:importmap": "payload generate:importmap",
-    "generate:types": "payload generate:types",
-    "generate:db-schema": "payload generate:db-schema",
+    "generate:importmap": "yarn payload generate:importmap",
+    "generate:types": "yarn payload generate:types",
+    "generate:db-schema": "yarn payload generate:db-schema",
     "test": "echo \"No test configured yet\""
   },
   "dependencies": {
