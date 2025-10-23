@@ -5,13 +5,13 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "payload": "payload",
+    "payload": "npx payload",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "generate:importmap": "yarn payload generate:importmap",
-    "generate:types": "yarn payload generate:types",
-    "generate:db-schema": "yarn payload generate:db-schema",
+    "generate:importmap": "npx payload generate:importmap",
+    "generate:types": "npx payload generate:types",
+    "generate:db-schema": "npx payload generate:db-schema",
     "test": "echo \"No test configured yet\""
   },
   "dependencies": {
