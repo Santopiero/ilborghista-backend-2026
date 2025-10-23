@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "payload": "payload",
+    "payload": "npx payload",
     "dev": "next dev",
     "build": "yarn generate:importmap && yarn generate:types && yarn generate:db-schema && next build",
     "start": "next start",
